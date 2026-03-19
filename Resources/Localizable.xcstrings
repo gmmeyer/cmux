@@ -57411,8 +57411,8 @@
         },
         "ja": {
           "stringUnit": {
-            "state": "translated",
-            "value": "CmdまたはCtrlを長押ししてもショートカットヒントピルは非表示のままです。"
+            "state": "needs_review",
+            "value": "修飾キーを長押ししてもショートカットヒントピルは非表示のままです。"
           }
         },
         "zh-Hans": {
@@ -57524,8 +57524,8 @@
         },
         "ja": {
           "stringUnit": {
-            "state": "translated",
-            "value": "Cmd（サイドバー/タイトルバー）またはCtrl/Cmd（ペインタブ）を長押しするとショートカットヒントピルが表示されます。"
+            "state": "needs_review",
+            "value": "ワークスペースまたはサーフェスの修飾キーを長押しするとショートカットヒントピルが表示されます。"
           }
         },
         "zh-Hans": {

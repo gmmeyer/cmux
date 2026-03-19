@@ -10703,7 +10703,7 @@ private struct TabItemView: View, Equatable {
 
     private var workspaceShortcutLabel: String? {
         guard let workspaceShortcutDigit else { return nil }
-        let flags = workspaceDigitModifierStored != 0
+        let flags = workspaceDigitModifierStored > 0
             ? NSEvent.ModifierFlags(rawValue: UInt(workspaceDigitModifierStored)).intersection(.deviceIndependentFlagsMask)
             : DigitShortcutModifierSettings.defaultWorkspaceFlags
         let symbol = DigitShortcutModifierSettings.symbolString(for: flags)

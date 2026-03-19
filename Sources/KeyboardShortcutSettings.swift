@@ -300,7 +300,7 @@ enum DigitShortcutModifierSettings {
         defaults: UserDefaults
     ) -> NSEvent.ModifierFlags {
         let raw = defaults.integer(forKey: key)
-        guard raw != 0 else { return fallback }
+        guard raw > 0 else { return fallback }
         return NSEvent.ModifierFlags(rawValue: UInt(raw))
             .intersection(.deviceIndependentFlagsMask)
     }
@@ -326,7 +326,7 @@ enum DigitShortcutModifierSettings {
     }
 
     static func eventModifiers(for storedValue: Int, fallback: NSEvent.ModifierFlags) -> EventModifiers {
-        let flags = storedValue != 0
+        let flags = storedValue > 0
             ? NSEvent.ModifierFlags(rawValue: UInt(storedValue)).intersection(.deviceIndependentFlagsMask)
             : fallback
         var modifiers: EventModifiers = []
@@ -386,7 +386,7 @@ private struct ModifierRecorderButton: NSViewRepresentable {
     }
 
     private var resolvedFlags: NSEvent.ModifierFlags {
-        storedFlags != 0
+        storedFlags > 0
             ? NSEvent.ModifierFlags(rawValue: UInt(storedFlags)).intersection(.deviceIndependentFlagsMask)
             : defaultFlags
     }
